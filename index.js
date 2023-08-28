@@ -42,7 +42,9 @@ function createDate(dateString) {
     dateString = dateNumber
   }
   let date = new Date(dateString)
-  // 1451001600000 != "1451001600000" javascript pain
+  //new Date(1451001600000) = 2015-12-25T00:00:00.000Z
+  //new Date("1451001600000") = Invalid Date
+  // .....................
   if(isValidDate(date)) {
     return date
   }
