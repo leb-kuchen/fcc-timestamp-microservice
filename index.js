@@ -23,7 +23,7 @@ app.get("/sayhi", (req, res) =>  {
 })
 app.get("/api/:date?", (req, res) => {
   const param = req.params.date
-  date = createDate(param)
+  let date = createDate(param)
   if(date === undefined) {
     res.json({error: "Invalid Date"})
     return 
