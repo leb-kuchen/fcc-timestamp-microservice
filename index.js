@@ -34,21 +34,18 @@ function isValidDate(d) {
   return d instanceof Date && !isNaN(d);
 }
 function createDate(dateString) {
-  console.log(dateString)
-  // current date
   if (dateString === "" || dateString === undefined || dateString === null) {
     return new Date()
   } 
+  let dateNumber = Number(dateString)
+  if(Number.isInteger(dateNumber)) {
+    dateString = dateNumber
+  }
   let date = new Date(dateString)
+  // 1451001600000 != "1451001600000" javascript pain
   if(isValidDate(date)) {
     return date
   }
-  
-  date =  new Date(parseInt(dateString))
-  if(isValidDate(date)) {
-    return date
-  }
-
   // unix
 }
 // listen for requests :)
